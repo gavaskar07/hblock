@@ -14,7 +14,7 @@
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">CompanyV1.0 Beta</a>
+            <a class="navbar-brand" href="index.html">HBlockV1.0 Beta</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -32,11 +32,18 @@
                 <main>
 <?php
 require_once 'config.php';
+echo "---------->" ;
 if(isset($_POST['submit_1']))
 {
 session_start();
 //check with the table user_setting
-$sql = "SELECT * FROM user where username='$_POST[user_name]' and password='$_POST[pass_word]'";
+echo "---------->" . $_POST['type'];
+$type=$_POST['type'];
+if($type=="Admin")
+{
+    $sql = "SELECT * FROM admin where username='$_POST[user_name]' and password='$_POST[pass_word]'";
+}
+
 echo $sql;
 		$result = $con->query($sql);
 		//$row = $result->fetch_assoc()
@@ -56,17 +63,23 @@ echo $sql;
 ?>
 <div class="container-fluid">
 </br>
-                        <h1 class="mt-4">Welcome to company Info AdminPage</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                            <li class="breadcrumb-item active">ompany Info AdminPage</li>
-                        </ol>
+</br>
+                        <h1 class="mt-4">Welcome to HCard Based Health Care and Government Fund to Blockchain
+and Smart Analytics Dashboard using GCP</h1>
+                        
   <div class="card mb-8">
                             <div class="card-body">
                                 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <div class="box">
         	<form action="index.php" method="POST">
+            <label for="firstname">login type</label>
+            <select name="type" class="form-control" value="">">
+		<option value="Govt.Agency">Govt.Agency</option>
+		<option value="Hospital">Hospital</option>
+        <option value="User">User</option>
+        <option value="Admin">Admin</option>
+		</select> 
         	<label for="firstname">User Name</label>
        		<input type="text" id="user_name" name="user_name"  class="form-control"><br>
         	<label for="lastname">Password</label>

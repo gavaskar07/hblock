@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Company-info</title>
+        <title>Welcome to HCard Based Health Care and Government Fund to Blockchain and Smart Analytics Dashboard using GCP</title>
         <link href="css/styles.css" rel="stylesheet" />
 
 		<script language="javascript" type="text/javascript" src="datetimepicker_css.js"></script>
